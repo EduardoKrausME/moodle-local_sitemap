@@ -24,44 +24,34 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$string['pluginname'] = 'Public sitemap';
-
-$string['privacy:metadata'] = 'The local_sitemap plugin does not store personal data.';
-
-$string['settings_enabled'] = 'Enable plugin';
-$string['settings_enabled_desc'] = 'Enable or disable sitemap generation and sitemap header injection.';
-
-$string['settings_sitemapurl'] = 'Sitemap URL';
-$string['settings_sitemapurl_desc'] = 'Public URL path for the sitemap XML. Example: /local/sitemap/sitemap.php';
-
-$string['settings_includecourses'] = 'Include courses';
-$string['settings_includecourses_desc'] = 'Include visible courses with active self-enrolment.';
-
-$string['settings_includecategories'] = 'Include categories';
-$string['settings_includecategories_desc'] = 'Include visible course categories.';
-
-$string['settings_includeblog'] = 'Include blog';
-$string['settings_includeblog_desc'] = 'Include public blog posts.';
-
-$string['settings_includeforums'] = 'Include forums';
-$string['settings_includeforums_desc'] = 'Include visible forums from the frontpage or courses with guest access.';
-
-$string['settings_includefrontpagemodules'] = 'Include frontpage modules';
-$string['settings_includefrontpagemodules_desc'] = 'Include visible activity links from course id 1.';
-
-$string['settings_includefrontpage'] = 'Include frontpage';
-$string['settings_includefrontpage_desc'] = 'Include the site frontpage URL.';
-
-$string['adminpage_title'] = 'Public sitemap';
 $string['adminpage_description'] = 'This page shows the current sitemap URL and the active sections included in the XML.';
-$string['adminpage_sitemapurl'] = 'Sitemap URL';
-$string['adminpage_status'] = 'Plugin status';
-$string['adminpage_status_enabled'] = 'Enabled';
-$string['adminpage_status_disabled'] = 'Disabled';
-$string['adminpage_item_frontpage'] = 'Frontpage';
-$string['adminpage_item_courses'] = 'Courses';
-$string['adminpage_item_categories'] = 'Categories';
 $string['adminpage_item_blog'] = 'Blog';
+$string['adminpage_item_categories'] = 'Categories';
+$string['adminpage_item_courses'] = 'Courses';
 $string['adminpage_item_forums'] = 'Forums';
+$string['adminpage_item_frontpage'] = 'Frontpage';
 $string['adminpage_item_frontpagemodules'] = 'Frontpage modules';
 $string['adminpage_openxml'] = 'Open XML sitemap';
+$string['adminpage_sitemapurl'] = 'Sitemap URL';
+$string['adminpage_status'] = 'Plugin status';
+$string['adminpage_status_disabled'] = 'Disabled';
+$string['adminpage_status_enabled'] = 'Enabled';
+$string['adminpage_title'] = 'Public sitemap';
+$string['pluginname'] = 'Public sitemap';
+$string['privacy:metadata'] = 'The local_sitemap plugin does not store personal data.';
+$string['settings_enabled'] = 'Enable plugin';
+$string['settings_enabled_desc'] = 'Enable or disable sitemap generation and sitemap header injection.';
+$string['settings_includeblog'] = 'Include blog';
+$string['settings_includeblog_desc'] = 'Include public blog posts.';
+$string['settings_includecategories'] = 'Include categories';
+$string['settings_includecategories_desc'] = 'Include visible course categories.';
+$string['settings_includecourses'] = 'Include courses';
+$string['settings_includecourses_desc'] = 'Include visible courses with active self-enrolment.';
+$string['settings_includeforums'] = 'Include forums';
+$string['settings_includeforums_desc'] = 'Include visible forums from the frontpage or courses with guest access.';
+$string['settings_includefrontpage'] = 'Include frontpage';
+$string['settings_includefrontpage_desc'] = 'Include the site frontpage URL.';
+$string['settings_includefrontpagemodules'] = 'Include frontpage modules';
+$string['settings_includefrontpagemodules_desc'] = 'Include visible activity links from course id 1.';
+$string['settings_sitemapurl'] = 'Sitemap URL';
+$string['settings_sitemapurl_desc'] = 'Public URL path for the sitemap XML. Example: /local/sitemap/sitemap.php';
