@@ -51,7 +51,6 @@ class blog_repository {
         $sql = "SELECT p.id, p.lastmodified
                   FROM {post} p
                  WHERE p.publishstate = :publishstate
-                   AND p.deleted = 0
               ORDER BY p.id ASC";
 
         $records = $DB->get_records_sql($sql, ["publishstate" => "site"]);
