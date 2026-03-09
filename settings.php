@@ -34,12 +34,10 @@ if ($hassiteconfig) {
         1
     ));
 
-    $settings->add(new admin_setting_configtext(
+    $settings->add(new admin_setting_heading(
         "local_sitemap/sitemapurl",
         get_string("settings_sitemapurl", "local_sitemap"),
-        get_string("settings_sitemapurl_desc", "local_sitemap"),
         "/local/sitemap/sitemap.php",
-        PARAM_URL
     ));
 
     $settings->add(new admin_setting_configcheckbox(
