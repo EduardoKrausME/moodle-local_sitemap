@@ -34,10 +34,11 @@ if ($hassiteconfig) {
         1
     ));
 
+    $url = new moodle_url("/local/kopere_sitemap/sitemap.php");
     $settings->add(new admin_setting_heading(
         "local_kopere_sitemap/sitemapurl",
         get_string("settings_sitemapurl", "local_kopere_sitemap"),
-        "/local/kopere_sitemap/sitemap.php",
+        html_writer::tag("a", $url, ["href" => $url, "class" => "course-link", "target" => "_blank"]),
     ));
 
     $settings->add(new admin_setting_configcheckbox(
