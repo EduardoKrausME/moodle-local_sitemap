@@ -59,7 +59,7 @@ class blog_repository {
         foreach ($records as $record) {
             $items[] = [
                 "loc" => (new moodle_url("/blog/index.php", ["entryid" => $record->id]))->out(false),
-                "lastmod" => !empty($record->lastmodified) ? date("c", (int)$record->lastmodified) : "",
+                "lastmod" => !empty($record->lastmodified) ? date("c", $record->lastmodified) : "",
             ];
         }
 

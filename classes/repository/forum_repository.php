@@ -77,7 +77,7 @@ class forum_repository {
         foreach ($records as $record) {
             $items[] = [
                 "loc" => (new moodle_url("/mod/forum/view.php", ["id" => $record->cmid]))->out(false),
-                "lastmod" => !empty($record->timemodified) ? date("c", (int)$record->timemodified) : "",
+                "lastmod" => !empty($record->timemodified) ? date("c", $record->timemodified) : "",
             ];
         }
 

@@ -56,7 +56,7 @@ class frontpage_repository {
         foreach ($records as $record) {
             $items[] = [
                 "loc" => (new moodle_url("/mod/" . $record->modname . "/view.php", ["id" => $record->cmid]))->out(false),
-                "lastmod" => !empty($record->added) ? date("c", (int)$record->added) : "",
+                "lastmod" => !empty($record->added) ? date("c", $record->added) : "",
             ];
         }
 

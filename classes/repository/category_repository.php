@@ -53,7 +53,7 @@ class category_repository {
         foreach ($records as $record) {
             $items[] = [
                 "loc" => (new moodle_url("/course/index.php", ["categoryid" => $record->id]))->out(false),
-                "lastmod" => !empty($record->timemodified) ? date("c", (int)$record->timemodified) : "",
+                "lastmod" => !empty($record->timemodified) ? date("c", $record->timemodified) : "",
             ];
         }
 

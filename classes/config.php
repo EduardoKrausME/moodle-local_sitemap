@@ -109,7 +109,7 @@ class config {
     public static function get_public_sitemap_url(): string {
         global $CFG;
 
-        $configured = trim((string)get_config("local_kopere_sitemap", "sitemapurl"));
+        $configured = trim(get_config("local_kopere_sitemap", "sitemapurl"));
         if ($configured === "") {
             $configured = "/local/kopere_sitemap/sitemap.php";
         }
