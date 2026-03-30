@@ -24,6 +24,7 @@
 
 namespace local_kopere_sitemap\service;
 
+use cache;
 use core\exception\moodle_exception;
 use ddl_exception;
 use dml_exception;
@@ -95,32 +96,39 @@ class sitemap_builder {
      * @throws moodle_exception
      */
     public function send_xml(): void {
-        $items = $this->build_items();
+        $cache = cache::make("local_kopere_sitemap", "sitemapxml");
+        $cachekey = "sitemapxml";
+        $xml = $cache->get($cachekey);
 
-        $writer = new XMLWriter();
-        $writer->openMemory();
-        $writer->startDocument("1.0", "UTF-8");
+        if (!$xml) {
+            $items = $this->build_items();
 
-        $writer->startElement("urlset");
-        $writer->writeAttribute("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9");
+            $writer = new XMLWriter();
+            $writer->openMemory();
+            $writer->startDocument("1.0", "UTF-8");
+            $writer->startElement("urlset");
+            $writer->writeAttribute("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9");
 
-        foreach ($items as $item) {
-            $writer->startElement("url");
-            $writer->writeElement("loc", $item["loc"]);
+            foreach ($items as $item) {
+                $writer->startElement("url");
+                $writer->writeElement("loc", $item["loc"]);
 
-            if (!empty($item["lastmod"])) {
-                $writer->writeElement("lastmod", $item["lastmod"]);
+                if (!empty($item["lastmod"])) {
+                    $writer->writeElement("lastmod", $item["lastmod"]);
+                }
+
+                $writer->endElement();
             }
 
             $writer->endElement();
+            $writer->endDocument();
+            $xml = $writer->outputMemory();
+            $cache->set($cachekey, $xml);
         }
-
-        $writer->endElement();
-        $writer->endDocument();
 
         header("Content-Type: application/xml; charset=UTF-8");
         header("X-Robots-Tag: noindex");
-        echo $writer->outputMemory();
+        echo $xml;
     }
 
     /**
